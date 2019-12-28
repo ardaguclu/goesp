@@ -28,8 +28,8 @@ type Analysis struct {
 }
 
 // New returns Analysis initialized with path regexp.
-func New(p string) *Analysis {
-	r, err := regexp.Compile(fmt.Sprintf(`^%s:\d+:\d+`, p))
+func New() *Analysis {
+	r, err := regexp.Compile(`^(.*):\d+:\d+`)
 	if err != nil {
 		log.Fatalf("regex failure %s\n", err)
 		return nil
@@ -52,7 +52,7 @@ func (a *Analysis) Start(data string) {
 	s := strings.Split(data, "\n")
 	for _, val := range s {
 		if a.PathRgx.MatchString(val) {
-			path := a.PathRgx.FindString(val)
+			path := a.PathRgx.FindStringSubmatch(val)[0]
 			for _, stck := range a.StackRgx {
 				if stck.MatchString(val) {
 					v, ok := a.Result[path]

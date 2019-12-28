@@ -28,7 +28,7 @@ func main() {
 		log.Fatalf("command execution failure: %s\n", err)
 	}
 
-	a := analysis.New(path)
+	a := analysis.New()
 	a.Start(stderr.String())
 
 	fmt.Println(a)
