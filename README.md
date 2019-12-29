@@ -1,15 +1,19 @@
 # GOESP
-Goesp is a command line tool to convert gcflags output to human readable format. It renders as table view which variables are stored into heap or stack according to the result of escape analysis(-gcflags=-m).
+[![GoDoc](https://godoc.org/github.com/ardaguclu/goesp?status.png)](http://godoc.org/github.com/ardaguclu/goesp)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ardaguclu/goesp)](https://goreportcard.com/report/github.com/ardaguclu/goesp)
 
-In order to make enhancements in terms of performance, Goesp sheds light on GC pressure of packages.
+Goesp is a command line tool to translate escape analysis executed in build phase to human readable format. 
+It renders the result of escape analysis(-gcflags=-m) as table view showing which variables are stored into heap or stack.
 
-## Usage
-After installing Goesp running command below;
+In order to make enhancements in terms of performance, Goesp sheds light on GC pressure on packages.
+
+### Install
 
 `go get github.com/ardaguclu/goesp`
 
-Executing;
+### Usage
 
 `goesp {path_of_package.go}`
+
 
 
