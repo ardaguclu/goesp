@@ -15,5 +15,8 @@ In order to make enhancements in terms of performance, Goesp sheds light on GC p
 
 `goesp {path_of_package.go}`
 
+### Result
+
+![picture](assets/readme.png)
 
 
